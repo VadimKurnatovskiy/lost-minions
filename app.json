@@ -30,8 +30,7 @@
   },
   "addons": [
     "heroku-postgresql",
-    "heroku-redis",
-    "sendgrid"
+    "heroku-redis"
   ],
   "buildpacks": [
     {
