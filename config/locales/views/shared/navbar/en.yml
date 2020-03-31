@@ -1,0 +1,10 @@
+en:
+  shared:
+    navbar:
+      app_name: Lost Minions
+      edit_profile: Edit profile
+      sign_in: Sign in
+      sign_out: Sign out
+      lost_pets: Lost pets
+      found_pets: Found pets
+      pets_for_adoption: Pets for adoption

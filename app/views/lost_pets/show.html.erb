@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col mx-auto">
+    <%= render 'shared/pet_details', pet: @pet %>
+    <div class="row">
+      <div class="col pet-actions">
+        <% if @pet.user == current_user %>
+          <%= link_to t('.edit'),
+                      edit_lost_pet_path(@pet),
+                      class: 'btn btn-sm btn-primary btn-pet-actions' %>
+          <%= link_to t('.delete'),
+                      lost_pet_path(@pet),
+                      data: { confirm: t('.confirmation_message') },
+                      method: :delete, class: 'btn btn-sm btn-danger btn-pet-actions' %>
+        <% elsif current_user %>
+          <%= link_to t('.see_contact_info'),
+                      pet_contact_logs_path(@pet),
+                      method: :post,
+                      class: 'btn btn-sm btn-primary btn-pet-actions' %>
+        <% end %>
+        <%= link_to t('.back'),
+                    lost_pets_path,
+                    class: 'btn btn-sm btn-link btn-pet-actions' %>
+      </div>
+    </div>
+  </div>
+</div>

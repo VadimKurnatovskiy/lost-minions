@@ -1,0 +1,151 @@
+.card-deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pet-card {
+    margin-top: 2em;
+    width: 18em;
+    color: inherit;
+    max-width: 350px;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+
+    .pet-image {
+      height: 320px;
+    }
+
+    .pet-header {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .pet-description {
+      font-size: 0.9em;
+      margin: 1em 0 0 0;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pet-registered-at {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.pet-pictures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pet-img-thumbnail {
+    margin: 0.2em;
+    width: 160px;
+    height: 160px;
+    border-radius: 0.3em;
+  }
+}
+
+label.bold {
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+.pet-info {
+  margin-bottom: 1.5em;
+}
+
+.pet-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .btn-pet-actions {
+    min-width: 25%;
+  }
+}
+
+.emoji {
+  margin-left: 5px;
+  font-size: 1.15rem;
+
+  &.emoji-sm {
+    font-size: 1rem;
+  }
+}
+
+#pet-map {
+  display: none;
+  width: 100%;
+  height: 300px;
+  border-radius: 0.25em;
+}
+
+.pet-last-location-map {
+  width: 100%;
+  height: 300px;
+  padding: 0 1em;
+}
+
+.pictures {
+  border: 1px solid $gray-400;
+  border-radius: 0.25rem;
+
+  .progress-upload {
+    display: none;
+    margin: 1em;
+  }
+
+  .pet-pictures-label {
+    display: block;
+    margin: 0;
+    text-align: center;
+    padding: 1.9em;
+    cursor: pointer;
+  }
+
+  #pet_pictures {
+    display: none;
+  }
+
+  .picture-to-upload {
+    margin: 0 0 0.5em 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1199px) {
+  .pet-actions {
+    .btn-pet-actions {
+      min-width: 70%;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .pet-card {
+    .pet-image {
+      max-height: 220px;
+    }
+  }
+
+  .pet-actions {
+    .btn-pet-actions {
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .card-deck {
+    align-items: center;
+  }
+}

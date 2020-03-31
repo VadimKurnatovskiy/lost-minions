@@ -1,0 +1,10 @@
+ru:
+  shared:
+    navbar:
+      app_name: Lost Minions
+      edit_profile: Редактировать профиль
+      sign_in: Вход
+      sign_out: Выход
+      lost_pets: Потерянные питомцы
+      found_pets: Найденные питомцы
+      pets_for_adoption: Питомцы в добрые руки

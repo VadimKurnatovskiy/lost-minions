@@ -1,0 +1,45 @@
+<div class="row my-4 pet-pictures">
+  <% pet.thumbnails.each do |thumbnail| %>
+    <%= link_to url_for(thumbnail.blob), target: '_blank' do %>
+      <%= image_tag url_for(thumbnail), class: 'pet-img-thumbnail' %>
+    <% end %>
+  <% end %>
+</div>
+<div class="row my-4">
+  <div class="col text-center">
+    <label class="bold"><%= t('activerecord.attributes.pet.name') %></label>
+    <p class="pet-info">
+      <%= pet.safe_name %>
+    </p>
+    <label class="bold"><%= t('activerecord.attributes.pet.age') %></label>
+    <p class="pet-info">
+      <%= pet.safe_age %>
+    </p>
+    <label class="bold"><%= t('activerecord.attributes.pet.breed') %></label>
+    <p class="pet-info">
+      <%= pet.safe_breed %>
+    </p>
+    <label class="bold"><%= t('activerecord.attributes.pet.gender') %></label>
+    <p class="pet-info">
+      <%= pet.safe_gender %>
+    </p>
+    <label class="bold"><%= t('activerecord.attributes.pet.description') %></label>
+    <%= simple_format(pet.safe_description, class: 'pet-info') %>
+    <label class="bold"><%= t('activerecord.attributes.pet.address') %></label>
+    <p class="pet-info">
+      <%= pet.address %>
+    </p>
+    <label class="bold"><%= t('.registered_at') %></label>
+    <p class="pet-info">
+      <%= l(pet.created_at, format: :long) %>
+    </p>
+  </div>
+</div>
+<div class="row my-4">
+  <iframe
+    class="pet-last-location-map"
+    frameborder="0"
+    scrolling="no"
+    src="https://maps.google.com/maps?q=<%= @pet.latitude %>,<%= @pet.longitude %>&z=16&output=embed">
+  </iframe>
+</div>

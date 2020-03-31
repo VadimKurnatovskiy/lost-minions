@@ -1,0 +1,11 @@
+ru:
+  devise:
+    passwords:
+      new:
+        header: "Забыли пароль?"
+        reset: "Отправьте мне инструкции по сбросу пароля"
+      edit:
+        header: "Изменить пароль"
+        change: "Изменить пароль"
+        new_password: "Новый пароль"
+        confirm_new_password: "Подтвердите новый пароль"

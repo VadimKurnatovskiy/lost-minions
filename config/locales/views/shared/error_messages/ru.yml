@@ -1,0 +1,4 @@
+ru:
+  shared:
+    error_messages:
+      validation_failed: "Что-то пошло не так."

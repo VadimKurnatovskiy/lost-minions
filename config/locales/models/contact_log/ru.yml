@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      contact_log:
+        one: Журнал контактов
+        other: Журналы контактов
+    attributes:
+      contact_log:
+        requesting_user: Запрашивающий пользователь
+        requested_user: Запрашиваемый пользователь
+        pet: Питомец

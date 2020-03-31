@@ -1,0 +1,8 @@
+ru:
+  devise:
+    shared:
+      links:
+        login: Вход
+        sign_up: Регистрация
+        forgot_password: Забыли свой пароль?
+        confirmation_email: Не получили подтверждение инструкции?

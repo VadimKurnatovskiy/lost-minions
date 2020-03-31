@@ -1,0 +1,6 @@
+ru:
+  pets:
+    contact_logs:
+      show:
+        header: Контактная информация
+        back: Вернуться к деталям питомца

@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      breed:
+        one: Порода
+        other: Породы
+    attributes:
+      breed:
+        name: Имя

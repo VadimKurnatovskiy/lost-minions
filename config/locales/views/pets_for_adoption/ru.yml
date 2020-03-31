@@ -1,0 +1,34 @@
+ru:
+  pets_for_adoption:
+    show:
+      back: Назад
+      no_name_informed: "Name not informed"
+      no_gender_informed: "Gender not informed"
+      no_description_given: "No description given"
+      see_contact_info: "See contact info"
+      edit: "Edit pet details"
+      delete: "Remove pet from database"
+      confirmation_message: "Are you sure?"
+    edit:
+      header: "Edit pet"
+      back: Назад
+    new:
+      header: Зарегистрировать нового питомца для передачи в добрые руки
+      back: Назад
+    form:
+      name: Имя
+      age: Возраст (в годах)
+      breed: Порода
+      gender: Пол
+      description: Краткое описание домашнего животного (например, послушная собака, тоже любит других собак)
+      address: Последнее место или адрес, где вы видели питомца
+      pictures: Выберите как минимум два фото
+      pictures_upload_error: При загрузке фотографий произошла ошибка. Пожалуйста, попробуйте еще раз.
+      pictures_out_of_range: "Вы можете загрузить от %{min} до %{max} фото"
+      pictures_invalid_type: Вы можете загрузить только изображения (например, PNG, JPEG)
+      submit: Сохранить
+    index:
+      header: Домашние животные для усыновления
+      subheader: Животные, которые ищут дом
+      register_new: Я хочу зарегистрировать питомца для усыновления
+      address: Место или адрес

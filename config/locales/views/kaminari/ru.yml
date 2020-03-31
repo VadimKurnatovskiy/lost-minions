@@ -1,0 +1,17 @@
+ru:
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{entry_name} не найден"
+          one: "Отобразить <b>1</b> %{entry_name}"
+          other: "Отобразить <b>все %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Отобразить %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> из <b>%{total}</b>"

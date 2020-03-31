@@ -1,0 +1,9 @@
+ru:
+  shared:
+    pet_details:
+      registered_at: Зарегистрирован
+      no_name_informed: Имя не указано
+      no_age_informed: Возраст не указан
+      no_breed_informed: Порода не указана
+      no_gender_informed: Пол не указан
+      no_description_given: Описание не указано

@@ -1,0 +1,8 @@
+ru:
+  found_pets:
+    create:
+      success: Питомец успешно зарегистрирован
+    update:
+      success: Питомец успешно обновлен
+    destroy:
+      success: Питомец успешно удален

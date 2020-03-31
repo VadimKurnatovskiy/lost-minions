@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <div class="mt-4 text-center">
+      <h4>
+        <%= t('.header') %>
+      </h4>
+      <h6>
+        <%= t('.subheader') %><span class="emoji">&#128270;</span>
+      </h6>
+      <%= link_to new_found_pet_path, class: 'btn btn-sm btn-primary btn-found-a-pet mt-3' do %>
+        <%= t('.register_new') %><span class="emoji emoji-sm">&#128525;</span>
+      <% end %>
+    </div>
+    <%= render 'shared/pet_filters', url: found_pets_path, situation: :found %>
+    <% @pets.each_slice(3) do |pets| %>
+      <div class="card-deck">
+        <% pets.each do |pet| %>
+          <%= link_to found_pet_path(pet), class: 'card pet-card' do %>
+            <%= render 'shared/pet_card', pet: pet %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <%= paginate @pets %>
+    </div>
+  </div>
+</div>

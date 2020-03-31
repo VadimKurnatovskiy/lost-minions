@@ -1,0 +1,33 @@
+ru:
+  activerecord:
+    models:
+      pet:
+        one: Питомец
+        other: Питомцы
+    attributes:
+      pet:
+        name: Имя
+        age: Возраст
+        gender: Пол
+        genders:
+          male: Мужской
+          female: Женский
+        breed: Порода
+        description: Описание
+        user: Пользователь
+        situation: Геопозиция
+        situations:
+          found: Найденные
+          lost: Потерянные
+        address: Адрес
+        latitude: Широта
+        longitude: Долгота
+        pictures: Картинки
+    errors:
+      models:
+        pet:
+          attributes:
+            pictures:
+              blank: обязательны
+            base:
+              latitude_or_longitude_blank: Выберите предложенное место или адрес

@@ -1,0 +1,5 @@
+ru:
+  shared:
+    pet_card:
+      pet_picture_alt: Фотографии питомца
+      registered_at: "Зарегистрирован %{datetime}"

@@ -1,0 +1,19 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        other: Пользователи
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        phone_number: Номер телефона
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+        confirmed_at: Подтверждено в
+        remember_me: Запомнить меня
+        reset_password_token: Сброс пароля
+        deactivated_at: Деактивировано в

@@ -1,0 +1,31 @@
+en:
+  lost_pets:
+    show:
+      back: "Back to lost pets"
+      see_contact_info: "See contact info"
+      edit: "Edit pet details"
+      delete: "Remove pet from database"
+      confirmation_message: "Are you sure?"
+    edit:
+      header: "Edit pet"
+      back: "Back to lost pets"
+    new:
+      header: "Register new lost pet"
+      back: "Back to lost pets"
+    form:
+      name: "Name"
+      age: "Age in years (optional)"
+      breed: "Breed"
+      gender: "Gender"
+      description: "Give us a brief description of the pet (e.g. dog with a red collar)"
+      address: "Last place or address where you have seen the pet"
+      pictures: "Select at least two pictures"
+      pictures_upload_error: "There was an error while uploading your pictures. Please try again."
+      pictures_out_of_range: "You must select between %{min} and %{max} pictures"
+      pictures_invalid_type: "You must select only pictures (e.g. PNG, JPEG)"
+      submit: "Submit"
+    index:
+      header: "Lost pets"
+      subheader: "Unfortunately the pets below are lost. Please help us find them"
+      register_new: "I've lost my pet"
+      address: "Place or address"

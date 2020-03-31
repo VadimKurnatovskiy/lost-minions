@@ -1,0 +1,16 @@
+ru:
+  devise:
+    registrations:
+      new:
+        header: Новый аккаунт
+        sign_up: Зарегистрироваться
+        phone_number_placeholder: "Телефон: X (XXX) XXX-XX-XX"
+      edit:
+        header: "Редактировать аккаунт"
+        waiting_confirmation: "В настоящее время жду подтверждения для:"
+        optional_password: Оставьте пустым, если вы не хотите его менять
+        required_current_password: "Нам нужно, чтобы вы подтвердили ваши изменения"
+        update: "Обновить"
+        deactivate_account: "Удалить мой аккаунт"
+        confirmation_message: Вы уверены?
+        phone_number_placeholder: "Телефон: X (XXX) XXX-XX-XX"

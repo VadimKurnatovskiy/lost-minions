@@ -1,0 +1,6 @@
+ru:
+  devise:
+    confirmations:
+      new:
+        header: Отправить подтверждение инструкции
+        resend: Отправить

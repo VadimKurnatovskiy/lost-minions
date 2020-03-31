@@ -1,0 +1,5 @@
+en:
+  errors:
+    messages:
+      content_type_invalid: wrong data type
+      limit_out_of_range: "wrong amount(min- %{min}, max- %{max})"

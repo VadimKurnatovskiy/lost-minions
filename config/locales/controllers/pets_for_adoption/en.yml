@@ -1,0 +1,8 @@
+en:
+  pets_for_adoption:
+    create:
+      success: Питомец успешно зарегистрирован
+    update:
+      success: Питомец успешно обновлен
+    destroy:
+      success: Питомец успешно удален
