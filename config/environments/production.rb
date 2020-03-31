@@ -16,6 +16,9 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   config.force_ssl = true
+  config.active_record.dump_schema_after_migration = false
+
+  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger = ActiveSupport::Logger.new(STDOUT)
@@ -23,19 +26,20 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" }
-  config.action_mailer.delivery_method = :smtp
+  # Enable Email delivery via custom SMTP server or via SendGrid by default
+  if ENV["SENDGRID_USERNAME"] || ENV["MAILER_USERNAME"]
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" }
 
-  ActionMailer::Base.smtp_settings = {
-    user_name: ENV['MAILER_USERNAME'],
-    password: ENV['MAILER_PASSWORD'],
-    domain: ENV['MAILER_DOMAIN'],
-    address: ENV['MAILER_ADDRESS'],
-    port: ENV['MAILER_PORT'],
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
-
-  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
+    config.action_mailer.smtp_settings = {
+      authentication:       :plain,
+      enable_starttls_auto: true,
+      openssl_verify_mode:  ENV.fetch("SMTP_OPENSSL_VERIFY_MODE", nil),
+      address:              ENV.fetch("MAILER_ADDRESS", "smtp.sendgrid.net"),
+      port:                 ENV.fetch("MAILER_PORT", 587),
+      domain:               ENV.fetch("MAILER_DOMAIN", "heroku.com"),
+      user_name:            ENV.fetch("MAILER_USERNAME") { ENV.fetch("SENDGRID_USERNAME") },
+      password:             ENV.fetch("MAILER_PASSWORD") { ENV.fetch("SENDGRID_PASSWORD") }
+    }
+  end
 end

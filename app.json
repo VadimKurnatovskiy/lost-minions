@@ -1,7 +1,24 @@
 {
-  "name": "lost_minions",
+  "name": "lost-minions",
   "scripts": {
     "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "HOST": { "required": true },
+    "LANG": { "required": true },
+    "EMAIL_SENDER": { "required": true },
+    "AWS_ACCESS_KEY_ID": { "required": true },
+    "AWS_SECRET_ACCESS_KEY": { "required": true },
+    "AWS_REGION": { "required": true },
+    "AWS_BUCKET": { "required": true },
+    "RACK_ENV": { "required": true },
+    "RAILS_ENV": { "required": true },
+    "RAILS_SERVE_STATIC_FILES": { "required": true },
+    "GEOCODES_ACC_USERNAME": { "required": true },
+    "GOOGLE_API_KEY": { "required": true },
+    "GOOGLE_CLIENT_ID": { "required": true },
+    "GOOGLE_CLIENT_SECRET": { "required": true },
+    "SECRET_KEY_BASE": { "generator": "secret" }
   },
   "formation": {
     "web": {
@@ -13,7 +30,8 @@
   },
   "addons": [
     "heroku-postgresql",
-    "heroku-redis"
+    "heroku-redis",
+    "sendgrid"
   ],
   "buildpacks": [
     {

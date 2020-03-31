@@ -19,7 +19,8 @@ module LostMinions
     config.generators.system_tests = nil
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.i18n.available_locales = %i[en ru]
-    config.i18n.fallbacks = I18n.available_locales
+    config.i18n.fallbacks = %i[en ru]
     config.i18n.default_locale = :ru
+    config.action_mailer.default_options = { from: ENV.fetch("EMAIL_SENDER") }
   end
 end
