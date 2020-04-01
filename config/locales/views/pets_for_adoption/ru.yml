@@ -2,15 +2,15 @@ ru:
   pets_for_adoption:
     show:
       back: Назад
-      no_name_informed: "Name not informed"
-      no_gender_informed: "Gender not informed"
-      no_description_given: "No description given"
-      see_contact_info: "See contact info"
-      edit: "Edit pet details"
-      delete: "Remove pet from database"
-      confirmation_message: "Are you sure?"
+      no_name_informed: Имя не указано
+      no_gender_informed: Пол не указан
+      no_description_given: Описание не указано
+      see_contact_info: Посмотреть контактную информацию
+      edit: Редактировать данные о питомце
+      delete: Удалить
+      confirmation_message: Вы уверены?
     edit:
-      header: "Edit pet"
+      header: Редактировать информацию о питомце
       back: Назад
     new:
       header: Зарегистрировать нового питомца для передачи в добрые руки
