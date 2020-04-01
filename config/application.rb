@@ -21,6 +21,6 @@ module LostMinions
     config.i18n.available_locales = %i[en ru]
     config.i18n.fallbacks = %i[en ru]
     config.i18n.default_locale = :ru
-    config.action_mailer.default_options = { from: ENV.fetch("EMAIL_SENDER") }
+    config.action_mailer.default_options = { from: ENV.fetch('EMAIL_SENDER') }
   end
 end
