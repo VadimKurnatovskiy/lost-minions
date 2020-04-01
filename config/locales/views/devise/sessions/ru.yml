@@ -3,6 +3,6 @@ ru:
     sessions:
       new:
         header: Авторизация
-        login: Авторизация
+        login: Войти
         or: или
         sign_in_with_google: "Войти с помощью Google"

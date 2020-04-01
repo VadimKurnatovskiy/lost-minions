@@ -1,8 +1,8 @@
 en:
   pets_for_adoption:
     create:
-      success: Питомец успешно зарегистрирован
+      success: "Pet successfully registered"
     update:
-      success: Питомец успешно обновлен
+      success: "Pet successfully updated"
     destroy:
-      success: Питомец успешно удален
+      success: "Pet successfully removed from our database"

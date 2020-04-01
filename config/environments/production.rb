@@ -18,7 +18,7 @@ Rails.application.configure do
   config.force_ssl = true
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
+  Rails.application.routes.default_url_options[:host] = ENV["HOST"]
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger = ActiveSupport::Logger.new(STDOUT)
@@ -29,7 +29,7 @@ Rails.application.configure do
   # Enable Email delivery via custom SMTP server or via SendGrid by default
   if ENV["SENDGRID_USERNAME"] || ENV["MAILER_USERNAME"]
     config.action_mailer.delivery_method = :smtp
-    config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" }
+    config.action_mailer.default_url_options = { host: ENV["HOST"] }
 
     config.action_mailer.smtp_settings = {
       authentication:       :plain,
