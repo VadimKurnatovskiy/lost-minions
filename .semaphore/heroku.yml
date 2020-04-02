@@ -29,7 +29,7 @@ blocks:
           - git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/
 
       jobs:
-        - name: Deploy to staging
+        - name: Deploy
           commands:
             - git remote add heroku https://git.heroku.com/$APP_NAME.git
             - git push heroku -f $SEMAPHORE_GIT_BRANCH:master

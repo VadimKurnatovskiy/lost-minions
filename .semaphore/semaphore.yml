@@ -24,7 +24,7 @@ global_job_config:
     - name: DATABASE_URL
       value: 'postgresql://postgres@localhost/test?encoding=utf8'
     - name: BUNDLE_ARGS
-      value: '--deployment --without development staging production --jobs 3'
+      value: '--deployment --without development --jobs 3'
 
   prologue:
     commands:
@@ -55,6 +55,7 @@ blocks:
         commands:
           - sem-version ruby 2.6.3
           - bundle install ${BUNDLE_ARGS} --local
+          - sem-service start redis
           - sem-service start postgres
           - bundle exec rake db:setup
 
