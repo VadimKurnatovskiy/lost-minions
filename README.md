@@ -1,4 +1,5 @@
 # Lost minions
+[![Build Status](https://semaphoreci.com/api/v1/vadimkurnatovskiy/lost-minions/branches/master/shields_badge.svg)](https://semaphoreci.com/vadimkurnatovskiy/lost-minions)
 
 Lost minions is a web application that helps people find their pets. The main idea is to centralize information about lost and found pets.
 

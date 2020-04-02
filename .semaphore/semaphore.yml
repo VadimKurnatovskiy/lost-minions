@@ -1,5 +1,5 @@
 version: v1.0
-name: Lost-Minions
+name: lost-minions
 
 agent:
   machine:
@@ -61,7 +61,7 @@ blocks:
       jobs:
       - name: Specs
         commands:
-          - bin/rspec spec
+          - bundle exec rspec
 
 promotions:
   - name: Deploy to Heroku
