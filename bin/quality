@@ -5,7 +5,7 @@ set -e
 bin/rubocop --display-style-guide
 bin/brakeman --quiet --skip-libs --exit-on-warn
 
-bin/scss-lint
+# bin/scss-lint
 
 bin/bundle-audit update
 bin/bundle-audit
