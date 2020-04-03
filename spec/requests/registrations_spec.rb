@@ -78,6 +78,16 @@ RSpec.describe 'Registrations', type: :request do
     context 'when user registered using email' do
       let(:user) { create(:user, provider: 'email', password: '123456') }
 
+      context 'when user changes timezone' do
+        let(:params) do
+          {
+            user: {
+              timezone: 'New name',
+              current_password: '123456'
+            }
+          }
+        end
+      end
       context 'when current password is informed' do
         let(:params) do
           {

@@ -41,7 +41,7 @@ module Api
 
             expect(JSON.parse(response.body)).to eq(
               'status' => 'success',
-              'message' => "Учетная запись с uid '#{user.uid}' удалена."
+              'message' => "Account with UID '#{user.uid}' has been destroyed."
             )
           end
         end

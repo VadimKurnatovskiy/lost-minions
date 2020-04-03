@@ -7,5 +7,6 @@ FactoryBot.define do
     phone_number { Faker::PhoneNumber.phone_number }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
+    timezone "Moscow"
   end
 end

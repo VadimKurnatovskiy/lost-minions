@@ -43,7 +43,7 @@ module Api
 
             expect(JSON.parse(response.body)).to match_array(
               [
-                'Запрашиваемый пользователь не может отсутствовать'
+                'Requested user must exist'
               ]
             )
           end
