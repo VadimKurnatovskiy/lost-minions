@@ -1,19 +1,24 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  extend Enumerize
   include DeviseTokenAuth::Concerns::User
 
   OMNIAUTH_PROVIDERS = %i[google_oauth2].freeze
+  AVAILABLE_LOCALES = Rails.configuration.i18n.available_locales.map(&:to_s)
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable, :omniauthable,
          omniauth_providers: OMNIAUTH_PROVIDERS
 
+  enumerize :language, in: AVAILABLE_LOCALES
+
   has_many :pets
 
   validates :first_name, presence: true
   validates :phone_number, presence: true, unless: :omniauth?
+  validates :language, inclusion: { in: AVAILABLE_LOCALES }, allow_blank: true
 
   def self.from_omniauth(auth) # rubocop:disable Metrics/AbcSize
     where(email: auth.info.email).first_or_create do |user|

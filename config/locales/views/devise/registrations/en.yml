@@ -14,3 +14,7 @@ en:
         deactivate_account: "Deactivate my account"
         confirmation_message: "Are you sure?"
         phone_number_placeholder: "Phone Number: (XX) XXXXX-XXXX"
+        timezone_placeholder: Choose your timezone
+        timezone_hint: Leave blank if you want to autodetect timezone by IP
+        language_placeholder: Choose your language
+        language_hint: Leave blank if you want to autodetect language by IP

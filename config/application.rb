@@ -17,6 +17,7 @@ module LostMinions
   class Application < Rails::Application
     config.load_defaults 5.2
     config.generators.system_tests = nil
+    config.time_zone = 'UTC'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.i18n.available_locales = %i[en ru]
     config.i18n.fallbacks = %i[en ru]

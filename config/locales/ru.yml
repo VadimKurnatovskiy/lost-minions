@@ -16,7 +16,7 @@ ru:
     - Пт
     - Сб
     abbr_month_names:
-    - 
+    -
     - янв.
     - февр.
     - марта
@@ -42,7 +42,7 @@ ru:
       long: "%-d %B %Y"
       short: "%-d %b"
     month_names:
-    - 
+    -
     - января
     - февраля
     - марта
@@ -261,8 +261,9 @@ ru:
       words_connector: ", "
   time:
     am: утра
+    pm: вечера
     formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
-    pm: вечера
+      time: '%H:%M'
