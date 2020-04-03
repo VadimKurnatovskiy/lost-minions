@@ -82,10 +82,17 @@ RSpec.describe 'Registrations', type: :request do
         let(:params) do
           {
             user: {
-              timezone: 'New name',
+              timezone: 'Alaska',
               current_password: '123456'
             }
           }
+        end
+
+        it 'updates timezone' do
+          expect do
+            put user_registration_path, params: params
+            user.reload
+          end.to change(user, :timezone).from(user.timezone).to('Alaska')
         end
       end
       context 'when current password is informed' do
