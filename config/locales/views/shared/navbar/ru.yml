@@ -8,3 +8,4 @@ ru:
       lost_pets: Потерянные питомцы
       found_pets: Найденные питомцы
       pets_for_adoption: Питомцы в добрые руки
+      current_time: "Время: %{time} (%{timezone})"

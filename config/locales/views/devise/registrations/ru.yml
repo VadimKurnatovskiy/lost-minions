@@ -14,3 +14,7 @@ ru:
         deactivate_account: "Удалить мой аккаунт"
         confirmation_message: Вы уверены?
         phone_number_placeholder: "Телефон: X (XXX) XXX-XX-XX"
+        timezone_placeholder: Выберите свой часовой пояс
+        timezone_hint: Оставьте пустым, если хотите автоопределение часового пояса по IP
+        language_placeholder: Выберите язык
+        language_hint: Оставьте пустым, если хотите автоопределение языка по IP

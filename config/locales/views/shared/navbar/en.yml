@@ -8,3 +8,4 @@ en:
       lost_pets: Lost pets
       found_pets: Found pets
       pets_for_adoption: Pets for adoption
+      current_time: "Time: %{time} (%{timezone})"

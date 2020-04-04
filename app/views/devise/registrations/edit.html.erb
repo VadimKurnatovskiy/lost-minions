@@ -24,6 +24,35 @@
                          placeholder: t('.phone_number_placeholder'),
                          class: 'form-control' %>
       </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <%= f.select :timezone,
+                          options_for_select(timezones_list, selected: @user.timezone),
+                          {
+                              include_blank: t('.timezone_placeholder'),
+                              class: 'form-control'
+                          } %>
+            <small class="form-text text-muted">
+              <%= t('.timezone_hint') %>
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.select :language,
+                          options_for_select(User.language.options, selected: @user.language),
+                          {
+                              include_blank: t('.language_placeholder'),
+                              class: 'form-control'
+                          } %>
+            <small class="form-text text-muted">
+              <%= t('.language_hint') %>
+            </small>
+          </div>
+        </div>
+      </div>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div><%= t('.waiting_confirmation') %> <%= resource.unconfirmed_email %></div>
       <% end %>

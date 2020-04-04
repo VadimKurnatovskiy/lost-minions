@@ -106,10 +106,10 @@ module Api
 
             expect(JSON.parse(response.body)).to match_array(
               [
-                'Адрес не может быть пустым',
-                'Выберите предложенное место или адрес',
-                'Картинки обязательны',
-                'Геопозиция не может быть пустым'
+                "Address can't be blank",
+                'Select a suggested place or address',
+                'Pictures are mandatory',
+                "Situation can't be blank"
               ]
             )
           end
