@@ -95,6 +95,25 @@ RSpec.describe 'Registrations', type: :request do
           end.to change(user, :timezone).from(user.timezone).to('Alaska')
         end
       end
+
+      context 'when user changes language' do
+        let(:params) do
+          {
+            user: {
+              language: 'ru',
+              current_password: '123456'
+            }
+          }
+        end
+
+        it 'updates language' do
+          expect do
+            put user_registration_path, params: params
+            user.reload
+          end.to change(user, :language).from(user.language).to('ru')
+        end
+      end
+
       context 'when current password is informed' do
         let(:params) do
           {
