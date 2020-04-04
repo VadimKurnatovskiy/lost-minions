@@ -1,4 +1,9 @@
 ru:
+  enumerize:
+    user:
+      language:
+        en: Английский
+        ru: Русский
   activerecord:
     models:
       user:

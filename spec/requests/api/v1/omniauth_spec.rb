@@ -92,7 +92,7 @@ module Api
 
             expect(JSON.parse(response.body)).to eq(
               [
-                'Имя не может быть пустым'
+                "First name can't be blank"
               ]
             )
           end
