@@ -68,6 +68,8 @@ module Api
         end
 
         context 'when id_token contains invalid information' do
+          before { I18n.locale = :en }
+
           let(:params) do
             {
               id_token: 'eyJhbGciOiJub25lIn0.eyJlbWFpbCI6IiIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6Ikxhc3QiLCJzdWIi'\

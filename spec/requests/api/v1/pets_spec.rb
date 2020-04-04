@@ -93,6 +93,8 @@ module Api
         end
 
         context 'with invalid params' do
+          before { I18n.locale = :en }
+
           it 'does not create a new pet' do
             expect do
               post api_v1_pets_path, params: invalid_attributes, headers: user.create_new_auth_token

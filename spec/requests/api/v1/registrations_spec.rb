@@ -19,6 +19,8 @@ module Api
             delete api_v1_user_registration_path, headers: user.create_new_auth_token
           end
 
+          before { I18n.locale = :en }
+
           it 'deactivates user and his/her registered pets' do
             deactivate_user
             user.reload
