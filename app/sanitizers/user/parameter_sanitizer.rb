@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User
   class ParameterSanitizer < Devise::ParameterSanitizer
     USER_PARAMS = %i[

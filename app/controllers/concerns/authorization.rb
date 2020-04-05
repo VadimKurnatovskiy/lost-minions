@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Authorization
   extend ActiveSupport::Concern
 
@@ -14,16 +16,16 @@ module Authorization
     if request.xhr?
       render json: { error: I18n.t('errors.messages.access_denied') }, status: 404
     else
-      flash[:alert] = I18n.t('errors.messages..access_denied')
+      flash[:alert] = I18n.t('errors.messages.access_denied')
       redirect_to root_path
     end
   end
 
   def record_not_found
     if request.xhr?
-      render json: { error: t('errors.messages..record_not_found') }, status: 404
+      render json: { error: t('errors.messages.record_not_found') }, status: 404
     else
-      flash[:alert] = I18n.t('errors.messages..record_not_found')
+      flash[:alert] = I18n.t('errors.messages.record_not_found')
       redirect_to root_path
     end
   end

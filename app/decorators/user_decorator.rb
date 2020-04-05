@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class UserDecorator < ApplicationDecorator
-  delegate :id, :email, :phone_number, :first_name, :last_name, :language, :timezone, :picture_url
+  delegate :id, :email, :phone_number, :first_name, :last_name, :language, :timezone, :picture_url,
+           :admin?, :role
 
   def full_name
     "#{object.first_name} #{object.last_name}"

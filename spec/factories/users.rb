@@ -8,10 +8,10 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password }
     timezone { 'Moscow' }
-    role { "user" }
+    role { 'user' }
 
     trait :admin do
-      role { "admin" }
+      role { 'admin' }
     end
   end
 end

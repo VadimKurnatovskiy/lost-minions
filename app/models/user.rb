@@ -13,7 +13,7 @@ class User < ApplicationRecord
          omniauth_providers: OMNIAUTH_PROVIDERS
 
   enumerize :language, in: AVAILABLE_LOCALES
-  enum role: { user: "user", admin: "admin" }
+  enum role: { user: 'user', admin: 'admin' }
 
   has_many :pets
 

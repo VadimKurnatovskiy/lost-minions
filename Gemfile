@@ -7,6 +7,7 @@ ruby '2.6.3'
 
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'active_storage_validations', '~> 0.8.2'
+gem 'activeadmin'
 gem 'aws-sdk-s3', '~> 1.46.0', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
@@ -25,9 +26,9 @@ gem 'kaminari', '~> 1.1.1'
 gem 'mini_magick', '~> 4.9.5'
 gem 'omniauth', '~> 1.9.0'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
-gem 'pundit'
 gem 'pg'
 gem 'puma'
+gem 'pundit'
 gem 'rack-cors', '~> 1.0.5'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0.7'
