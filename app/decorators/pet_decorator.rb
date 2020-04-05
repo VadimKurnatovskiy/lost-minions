@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PetDecorator < Draper::Decorator
+class PetDecorator < ApplicationDecorator
   delegate_all
 
   include Rails.application.routes.url_helpers

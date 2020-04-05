@@ -31,10 +31,8 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = ENV['HOST']
 end
 
-class ActionDispatch
-  class Request
-    def location
-      Geocoder.search('178.207.7.100').first
-    end
+class ActionDispatch::Request
+  def location
+    Geocoder.search('178.207.7.100').first
   end
 end

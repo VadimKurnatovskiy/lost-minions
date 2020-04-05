@@ -13,10 +13,11 @@ class User < ApplicationRecord
          omniauth_providers: OMNIAUTH_PROVIDERS
 
   enumerize :language, in: AVAILABLE_LOCALES
+  enum role: { user: "user", admin: "admin" }
 
   has_many :pets
 
-  validates :first_name, presence: true
+  validates :first_name, :role, presence: true
   validates :phone_number, presence: true, unless: :omniauth?
   validates :language, inclusion: { in: AVAILABLE_LOCALES }, allow_blank: true
 
