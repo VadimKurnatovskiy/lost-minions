@@ -267,3 +267,12 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
       time: '%H:%M'
+  formtastic:
+    :yes: 'Да'
+    :no: 'Нет'
+    :create: 'Создать %{model}'
+    :update: 'Редактировать %{model}'
+    :submit: 'Сохранить %{model}'
+    :cancel: 'Отменить'
+    :reset: 'Сбросить %{model}'
+    :required: 'обязательное'

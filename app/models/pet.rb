@@ -19,8 +19,7 @@ class Pet < ApplicationRecord
   validates :pictures,
             attached: true,
             content_type: IMAGE_TYPE,
-            limit: { max: MAX_PICTURES_COUNT }
-  validates :pictures, limit: { min: MIN_PICTURES_COUNT }, if: :new_record?
+            limit: { max: MAX_PICTURES_COUNT, min: MIN_PICTURES_COUNT }
   validate :latitude_or_longitude_blank
 
   default_scope { where(deactivated_at: nil) }

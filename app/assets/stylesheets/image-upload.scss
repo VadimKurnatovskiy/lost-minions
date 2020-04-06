@@ -1,0 +1,91 @@
+.image-upload {
+  position: relative;
+  min-width: 120px;
+  max-width: 300px;
+  min-height: 30px;
+  margin: 5px 0 15px;
+  color: $white;
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  label:not(.image-upload__label) {
+    @extend .btn;
+    @extend .btn-warning;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &--multiple {
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - 10px), 1fr));
+    align-items: start;
+    grid-gap: 10px;
+
+    @media (max-width: $screen-xs) {
+      grid-template-columns: 1fr;
+    }
+
+    .image-upload__preview {
+      margin-bottom: 0;
+    }
+
+    label:not(.image-upload__label) {
+      position: static;
+      grid-column: span 3;
+      transform: translate(0, 0);
+
+      @media (max-width: $screen-xs) {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0 5px;
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  &__preview {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__preview-img {
+    width: 100%;
+  }
+
+  &__label {
+    @media (max-width: $screen-sm) {
+      width: 100%;
+    }
+  }
+
+  .form-control__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    font-weight: normal;
+  }
+}

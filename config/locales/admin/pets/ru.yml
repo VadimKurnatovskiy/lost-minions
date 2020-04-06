@@ -1,0 +1,8 @@
+ru:
+  admin:
+    pets:
+      form:
+        pictures: Выберите как минимум два фото
+        pictures_upload_error: При загрузке фотографий произошла ошибка. Пожалуйста, попробуйте еще раз.
+        pictures_out_of_range: "Вы можете загрузить от %{min} до %{max} фото"
+        pictures_invalid_type: Вы можете загрузить только изображения (например, PNG, JPEG)

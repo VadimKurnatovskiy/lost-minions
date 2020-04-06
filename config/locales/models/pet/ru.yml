@@ -15,10 +15,11 @@ ru:
         breed: Порода
         description: Описание
         user: Пользователь
-        situation: Геопозиция
+        situation: Ситуация
         situations:
           found: Найденные
           lost: Потерянные
+          for_adoption: В добрые руки
         address: Адрес
         latitude: Широта
         longitude: Долгота

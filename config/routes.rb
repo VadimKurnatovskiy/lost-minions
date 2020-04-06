@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   resources :lost_pets
   resources :found_pets
+  resources :attachments, only: %i[destroy]
   resources :pets_for_adoption
   resources :pets, only: [] do
     resources :contact_logs, only: %i[create show], controller: 'pets/contact_logs'

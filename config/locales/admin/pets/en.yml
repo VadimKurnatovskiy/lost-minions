@@ -1,0 +1,8 @@
+en:
+  admin:
+    pets:
+      form:
+        pictures: "Select at least two pictures"
+        pictures_upload_error: "There was an error while uploading your pictures. Please try again."
+        pictures_out_of_range: "You must select between %{min} and %{max} pictures"
+        pictures_invalid_type: "You must select only pictures (e.g. PNG, JPEG)"
