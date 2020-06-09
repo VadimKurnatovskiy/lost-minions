@@ -12,10 +12,11 @@ class AttachmentsController < ApplicationController
   private
 
   def fetch_attachment
-    @attachment = if current_user.admin?
-      ActiveStorage::Attachment.find(params[:id])
-    else
-      ActiveStorage::Attachment.where(record: current_user.pets).find(params[:id])
-    end
+    @attachment =
+      if current_user.admin?
+        ActiveStorage::Attachment.find(params[:id])
+      else
+        ActiveStorage::Attachment.where(record: current_user.pets).find(params[:id])
+      end
   end
 end
