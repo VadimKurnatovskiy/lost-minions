@@ -30,6 +30,7 @@ module Api
         context 'with invalid params' do
           before do
             pet.update_column('user_id', nil)
+            I18n.locale = :en
           end
 
           it 'does not create a new contact log' do

@@ -1,6 +1,10 @@
 var ENTER_KEY_CODE = 13;
 var MAP_ZOOM_LEVEL = 15;
 
+function toggleButtonState(buttonId, attributes) {
+  $(buttonId).attr(attributes);
+}
+
 function initializeLocationServices() {
   var addressInput = document.getElementById('pet_address');
   var autocomplete = new google.maps.places.Autocomplete(
@@ -8,7 +12,7 @@ function initializeLocationServices() {
     { types: ['geocode', 'establishment'] }
   );
 
-  toggleButtonState('#btn-submit', { 'disabled': true });
+  toggleButtonState('[id$=submit]', { 'disabled': true });
   preventFormSubmitOnEnter(addressInput);
 
   autocomplete.setFields(['geometry']);
@@ -53,7 +57,7 @@ function handlePlaceSelect(autocomplete) {
     longitudeInput.val(coordinates.lng());
   }
 
-  toggleButtonState('#btn-submit', { 'disabled': false });
+  toggleButtonState('[id$=submit]', { 'disabled': false });
 
   var latitude = parseFloat(latitudeInput.val());
   var longitude = parseFloat(longitudeInput.val());

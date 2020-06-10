@@ -1,5 +1,7 @@
-en:
+ru:
   errors:
     messages:
       content_type_invalid: неправильный тип данных
       limit_out_of_range: "неправильная сумма(минимальная- %{min}, max- %{max})"
+      access_denied: У Вас нет доступа к запрашиваемому действию!
+      record_not_found: Ничего не найдено

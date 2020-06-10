@@ -3,6 +3,7 @@ ru:
     navbar:
       app_name: Lost Minions
       edit_profile: Редактировать профиль
+      admin_panel: Панель администратора
       sign_in: Вход
       sign_out: Выход
       lost_pets: Потерянные питомцы

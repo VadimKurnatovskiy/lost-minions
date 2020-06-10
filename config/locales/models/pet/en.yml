@@ -2,32 +2,32 @@ en:
   activerecord:
     models:
       pet:
-        one: "Pet"
-        other: "Pets"
+        one: Pet
+        other: Pets
     attributes:
       pet:
-        name: "Name"
-        age: "Age"
-        gender: "Gender"
+        name: Name
+        age: Age
+        gender: Gender
         genders:
-          male: "Male"
-          female: "Female"
-        breed: "Breed"
-        description: "Description"
-        user: "User"
-        situation: "Situation"
+          male: Male
+          female: Female
+        breed: Breed
+        description: Description
+        user: User
+        situation: Situation
         situations:
-          found: "Found"
-          lost: "Lost"
-        address: "Address"
-        latitude: "Latitude"
-        longitude: "Longitude"
-        pictures: "Pictures"
+          found: Found
+          lost: Lost
+        address: Address
+        latitude: Latitude
+        longitude: Longitude
+        pictures: Pictures
     errors:
       models:
         pet:
           attributes:
             pictures:
-              blank: "are mandatory"
+              blank: are mandatory
             base:
-              latitude_or_longitude_blank: "Select a suggested place or address"
+              latitude_or_longitude_blank: Select a suggested place or address

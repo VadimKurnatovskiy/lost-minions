@@ -1,0 +1,38 @@
+<%= semantic_form_for [:admin, resource] do |f| %>
+    <%= f.inputs "Pet" do %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :gender %>
+      <%= f.input :user, as: :select, collection: User.all.pluck(:email, :id) %>
+      <%= f.input :description %>
+      <%= f.input :situation %>
+      <div class="form-group pictures">
+        <%= f.label :pictures, class: 'pet-pictures-label' do %>
+          <i class="fas fa-cloud-upload-alt"></i>
+          <%= t('.pictures') %>
+        <% end %>
+        <%= f.file_field :pictures,
+                            multiple: true,
+                            direct_upload: true,
+                            accept: 'image/*',
+                            data: {
+                                'pictures-upload-error' => t('.pictures_upload_error'),
+                                'pictures-invalid-type-error' => t('.pictures_invalid_type'),
+                                'min-pictures-count' => Pet::MIN_PICTURES_COUNT - @pet.pictures.count,
+                                'max-pictures-count' => Pet::MAX_PICTURES_COUNT,
+                                'pictures-out-of-range-error' => t(
+                                    '.pictures_out_of_range',
+                                    min: Pet::MIN_PICTURES_COUNT,
+                                    max: Pet::MAX_PICTURES_COUNT
+                                )
+                            } %>
+      </div>
+      <%= f.input :address %>
+      <%= f.input :latitude, as: :hidden %>
+      <%= f.input :longitude, as: :hidden %>
+      <div id="pet-map"></div>
+    <% end %>
+    <%= f.actions  %>
+<% end %>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initializeLocationServices"></script>
