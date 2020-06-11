@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  include ActionPolicy::Policy::Core
-  include ActionPolicy::Policy::Authorization
-  include ActionPolicy::Policy::Cache
-
   authorize :user, allow_nil: true
 
   def manage?
