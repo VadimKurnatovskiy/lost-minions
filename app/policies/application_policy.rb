@@ -1,33 +1,49 @@
-# frozen_string_literal: true
-
 class ApplicationPolicy
-  authorize :user, allow_nil: true
+  attr_reader :user, :record
 
-  def manage?
-    false
+  def initialize(user, record)
+    @user = user
+    @record = record
   end
 
   def index?
-    manage?
+    false
   end
 
-  def new?
-    manage?
-  end
-
-  def edit?
-    manage?
-  end
-
-  def destroy?
-    manage?
+  def show?
+    false
   end
 
   def create?
-    new?
+    false
+  end
+
+  def new?
+    create?
   end
 
   def update?
-    edit?
+    false
+  end
+
+  def edit?
+    update?
+  end
+
+  def destroy?
+    false
+  end
+
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope.all
+    end
   end
 end
