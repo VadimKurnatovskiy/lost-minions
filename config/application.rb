@@ -23,5 +23,6 @@ module LostMinions
     config.i18n.fallbacks = %i[en ru]
     config.i18n.default_locale = :ru
     config.action_mailer.default_options = { from: ENV.fetch('EMAIL_SENDER') }
+    config.autoload_paths += Dir[Rails.root.join('app', 'policies', '*.rb'), Rails.root.join('app', 'lib', '*.rb')]
   end
 end
