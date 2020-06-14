@@ -8,7 +8,7 @@ ruby '2.6.3'
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'active_storage_validations', '~> 0.8.2'
 gem 'activeadmin'
-gem 'aws-sdk-s3', '~> 1.46.0', require: false
+gem 'aws-sdk-s3', '~> 1.68.1', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.7.1'
