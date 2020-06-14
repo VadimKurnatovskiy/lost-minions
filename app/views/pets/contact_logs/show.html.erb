@@ -5,13 +5,17 @@
         <%= t('.header') %>
       </h4>
       <div class="mt-4">
-        <label class="bold"><%= t('activerecord.attributes.user.first_name') %></label>
+        <label class="bold"><%= t('.first_name') %></label>
         <p>
           <%= @contact_log.requested_user.first_name %>
         </p>
-        <label class="bold"><%= t('activerecord.attributes.user.phone_number') %></label>
+        <label class="bold"><%= t('.phone_number') %></label>
         <p>
           <%= @contact_log.requested_user.phone_number %>
+        </p>
+        <label class="bold"><%= t('.availability') %></label>
+        <p>
+          <%= @contact_log.requested_user.decorate.availability %>
         </p>
         <%= link_to t('.back'),
                     @contact_log.pet.decorate.path,

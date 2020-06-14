@@ -17,9 +17,10 @@ class User < ApplicationRecord
 
   has_many :pets
 
-  validates :first_name, :role, presence: true
+  validates :first_name, :role, :call_time_from, :call_time_to, presence: true
   validates :phone_number, presence: true, unless: :omniauth?
   validates :language, inclusion: { in: AVAILABLE_LOCALES }, allow_blank: true
+  before_create :set_default_call_time
 
   def self.from_omniauth(auth) # rubocop:disable Metrics/AbcSize
     where(email: auth.info.email).first_or_create do |user|
@@ -55,5 +56,10 @@ class User < ApplicationRecord
     pets.with_deactivated.each do |pet|
       pet.update(attributes)
     end
+  end
+
+  def set_default_call_time
+    self.call_time_from = Time.utc(2020, 5, 6, 9)
+    self.call_time_to = Time.utc(2020, 5, 6, 21)
   end
 end

@@ -52,6 +52,25 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <small class="form-text text-muted">
+              <%= t('.call_time_hint') %>
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.time_select :call_time_from, { minute_step: 15 }, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.time_select :call_time_to, { minute_step: 15 }, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div><%= t('.waiting_confirmation') %> <%= resource.unconfirmed_email %></div>

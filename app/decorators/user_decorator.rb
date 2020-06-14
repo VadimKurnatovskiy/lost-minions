@@ -11,4 +11,8 @@ class UserDecorator < ApplicationDecorator
   def full_name_with_email
     "#{object.full_name} (#{object.email})"
   end
+
+  def availability
+    "#{l(object.call_time_from, format: :time)} - #{l(object.call_time_to, format: :time)}"
+  end
 end
