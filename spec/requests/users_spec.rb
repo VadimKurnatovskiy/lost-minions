@@ -10,6 +10,8 @@ RSpec.describe 'Users', type: :request do
         last_name: 'Last name',
         phone_number: '+55123456789',
         email: 'user@email.com',
+        call_time_from: Time.utc(2020, 5, 6, 9),
+        call_time_to: Time.utc(2020, 5, 6, 21),
         password: 'password'
       }
     }

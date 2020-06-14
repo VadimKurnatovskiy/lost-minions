@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :language, inclusion: { in: AVAILABLE_LOCALES }, allow_blank: true
   before_create :set_default_call_time
 
-  def self.from_omniauth(auth) # rubocop:disable Metrics/AbcSize
+  def self.from_omniauth(auth) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     where(email: auth.info.email).first_or_create do |user|
       user.uid = auth.uid
       user.provider = auth.provider
@@ -30,6 +30,8 @@ class User < ApplicationRecord
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.picture_url = auth.info.image
+      user.call_time_from = Time.utc(2020, 5, 6, 9)
+      user.call_time_to = Time.utc(2020, 5, 6, 21)
       user.skip_confirmation!
     end
   end
