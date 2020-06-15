@@ -1,6 +1,7 @@
 en:
   shared:
     pet_filters:
-      breed: "Breed"
-      gender: "Gender"
-      address: "Place or address"
+      breed: Breed
+      gender: Gender
+      address: Place or address
+      distance: Search radius, km

@@ -3,5 +3,5 @@ function handleFilterSelection() {
 }
 
 $(document).ready(function () {
-  $('#breed_id, #gender, #address').change(handleFilterSelection);
+  $('#breed_id, #gender, #address, #distance').change(handleFilterSelection);
 });

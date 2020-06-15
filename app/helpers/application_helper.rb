@@ -13,4 +13,8 @@ module ApplicationHelper
   def active_item(name)
     'active' if name == controller_name
   end
+
+  def radius_lists
+    [10, 20, 50, 100, 200, 500, 1000]
+  end
 end

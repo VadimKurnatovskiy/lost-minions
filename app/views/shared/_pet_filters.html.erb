@@ -30,5 +30,12 @@
                          class: 'form-control'
                      } %>
     </div>
+    <div class="col-md mt-3 mx-3 mx-md-0">
+      <%= select_tag :distance, options_for_select(radius_lists, selected: params[:distance]),
+                     {
+                         include_blank: t('.distance'),
+                         class: 'form-control'
+                     } %>
+    </div>
   </div>
 <% end %>

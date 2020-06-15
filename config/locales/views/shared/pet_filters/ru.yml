@@ -4,3 +4,4 @@ en:
       breed: Порода
       gender: Пол
       address: Место или адрес
+      distance: Радиус поиска, км

@@ -5,7 +5,7 @@ module Geolocation
 
   included do
     def current_coordinates
-      @current_coordinates ||= from_cookies || from_request
+      @current_coordinates ||= from_cookies || from_request || []
     end
   end
 

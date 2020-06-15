@@ -12,7 +12,7 @@ module Pets
         breed: params[:breed_id],
         gender: params[:gender],
         address: params[:address],
-        near: near_params
+        near: near_api_params
       }
     end
 
@@ -36,6 +36,14 @@ module Pets
     end
 
     def near_params
+      {
+        radius: params[:distance],
+        latitude: params[:latitude] || current_coordinates[0],
+        longitude: params[:longitude] || current_coordinates[1]
+      }
+    end
+
+    def near_api_params
       {
         radius: params[:distance],
         latitude: params[:latitude],
