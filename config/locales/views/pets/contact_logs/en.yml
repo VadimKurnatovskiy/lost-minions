@@ -2,5 +2,8 @@ en:
   pets:
     contact_logs:
       show:
-        header: "Contact information"
-        back: "Back to pet details"
+        header: Contact information
+        first_name: Name
+        phone_number: Phone
+        availability: Available hours for a call
+        back: Back to pet details

@@ -3,4 +3,7 @@ ru:
     contact_logs:
       show:
         header: Контактная информация
+        first_name: Имя
+        phone_number: Номер телефона
+        availability: Доступные часы для звонка
         back: Вернуться к деталям питомца

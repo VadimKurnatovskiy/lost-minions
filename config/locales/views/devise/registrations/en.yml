@@ -18,3 +18,4 @@ en:
         timezone_hint: Leave blank if you want to autodetect timezone by IP
         language_placeholder: Choose your language
         language_hint: Leave blank if you want to autodetect language by IP
+        call_time_hint: Configure available time for calls

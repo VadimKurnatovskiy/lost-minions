@@ -11,6 +11,8 @@ class User
       password_confirmation
       timezone
       language
+      call_time_from
+      call_time_to
     ].freeze
 
     def initialize(*)

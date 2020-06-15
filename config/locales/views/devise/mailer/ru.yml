@@ -2,7 +2,7 @@ ru:
   devise:
     mailer:
       confirmation_instructions:
-        welcome: "Добро пожаловатьб %{name}"
+        welcome: "Добро пожаловать, %{name}"
         instructions: "Вы можете подтвердить адрес электронной почты своей учетной записи по ссылке ниже:"
         confirm: "Подтвердить аккаунт"
       email_changed:
