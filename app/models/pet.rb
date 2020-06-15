@@ -14,7 +14,9 @@ class Pet < ApplicationRecord
   has_many_attached :pictures
 
   validates :name, :breed, :gender, presence: true, if: :lost? || :for_adoption?
-  validates :age, numericality: { only_integer: true }, allow_nil: true
+  validates :age,
+            numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 },
+            allow_nil: true
   validates :situation, :address, presence: true
   validates :pictures,
             attached: true,
@@ -68,7 +70,7 @@ class Pet < ApplicationRecord
   end
 
   def self.address_for_select(situation:)
-    where(situation: situation).order(:address).pluck(:address)
+    where(situation: situation).order(:address).pluck(:address).uniq
   end
 
   def create_thumbnails

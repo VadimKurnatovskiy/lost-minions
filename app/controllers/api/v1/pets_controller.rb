@@ -9,8 +9,9 @@ module Api
       before_action :fetch_pet, only: %i[edit update destroy]
 
       def index
-        render json: PetQuery.new
-                             .filter(api_filter_params)
+        render json: PetQuery.new(Pet.all, api_filter_params)
+                             .all
+                             .page(params[:page]).per(params[:per_page])
                              .sorted_by_creation_date(:desc)
       end
 

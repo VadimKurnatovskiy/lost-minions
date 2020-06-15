@@ -1,32 +1,25 @@
 # frozen_string_literal: true
 
 class PetQuery
-  DEFAULT_RADIUS = 100
   ALLOWED_PARAMS = %i[situation breed gender address near].freeze
 
-  attr_reader :relation
+  attr_reader :relation, :filter_params
+  private :relation, :filter_params
 
-  def initialize(relation = Pet.all)
+  def initialize(relation = Pet.all, filter_params = {})
     @relation = relation.includes(:breed, :user).with_attached_pictures
+    @filter_params = filter_params
   end
 
-  def filter(params = {})
-    result = params.slice(*ALLOWED_PARAMS).reduce(relation) do |relation, (key, value)|
+  def all
+    filter_params.slice(*ALLOWED_PARAMS).reduce(relation) do |relation, (key, value)|
       next relation if value.blank?
 
       send("by_#{key}", relation, value)
     end
-
-    paginate(result, params[:pagination])
   end
 
   private
-
-  def paginate(result, params)
-    return result unless params.present?
-
-    result.page(params[:page]).per(params[:per_page])
-  end
 
   def by_situation(relation, situation)
     relation.where(situation: situation)
@@ -43,7 +36,7 @@ class PetQuery
   def by_near(relation, near_params)
     return relation unless searching_area?(near_params)
 
-    relation.near([near_params[:latitude], near_params[:longitude]], near_params[:radius].presence || DEFAULT_RADIUS)
+    relation.near([near_params[:latitude], near_params[:longitude]], near_params[:radius])
   end
 
   def by_address(relation, address)
@@ -51,6 +44,6 @@ class PetQuery
   end
 
   def searching_area?(params)
-    params[:latitude].present? && params[:longitude].present?
+    params[:latitude].present? && params[:longitude].present? && params[:radius].present?
   end
 end

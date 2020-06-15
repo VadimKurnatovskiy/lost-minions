@@ -7,9 +7,10 @@ class PetsForAdoptionController < ApplicationController
   before_action :fetch_pet, only: %i[edit update destroy]
 
   def index
-    @pets = PetQuery.new
-                    .filter(web_filter_params(situation: :for_adoption))
+    @pets = PetQuery.new(Pet.all, web_filter_params(situation: :for_adoption))
+                    .all
                     .sorted_by_creation_date(:desc)
+                    .page(params[:page]).per(params[:per_page])
                     .decorate
   end
 
